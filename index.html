@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base href="http://murindwaz/sms4farmers/"/>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link href="http://fonts.googleapis.com/css?family=Cuprum" media="screen" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/underscore-min.js"></script>	
+<script type="text/javascript" src="js/backbone-min.js"></script>	
+<script type="text/javascript" src="js/bootstrap.min.js"></script>	
+<!--
+	<script type="text/javascript" src="js/backbone-min.js"></script>	
+-->
+<script type="text/javascript" src="js/model.js"></script>	
+<script type="text/javascript" src="js/view.js"></script>	
+<script type="" id="customerTableView">
+
+</script>
+<script type="" id="customerView">
+	<div class'' id=''>
+		<ul class='customerUl'></ul>
+		
+	</div>
+</script>
+<script type="" id="messageView">
+
+</script>
+<script type="" id="stockView">
+
+</script>
+
+<style> 
+	body{
+		margin-top: 0px;
+	}		
+</style>
+</head>
+<body>
+<div id="topNav">
+		<div class="fixed">
+			<div class="wrapper">
+				
+			<div class="navbar navbar-fixed-top">
+			  <div class="navbar-inner">
+			    <div class="container">
+			    <h4><a class="brand pull-left" href="#"> sms4farmers </a></h4>		    
+			    <ul class="nav pull-right">
+				  <li class="dropdown">
+				    <a href="#" title="" class="dropdown-toggle" data-toggle="dropdown"><span>Tools</span> <b class="caret"></b></a>
+				    <ul class="dropdown-menu">
+				    	<li><a href="#!customers"  id="btn-customers"><i class="icon-user"></i> Customers</a></li>
+				        <li><a href="#!messages" id="btn-messages"><i class="icon-book"></i> Messages</a></li>
+				        <li><a href="#!stocks" id="btn-messages"><i class="icon-gear"></i> Stock</a></li>
+				      </ul>
+				  </li>
+				</ul>
+			    </div>
+			  </div>
+			</div>				<div class="fix"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+	<div class='wrapper span12'></div>
+		<div class=' footer'>OpenIt4Africa</div>
+	</div>
+	
+	
+	<script type="text/javascript"> 
+		window.customers = new CustomerCollection();
+		window.stock = new StockCollection();
+		window.messages = new MessageCollection();
+	
+	</script>
+	
+	
+</body>
+</html>
