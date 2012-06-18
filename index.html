@@ -17,17 +17,20 @@
 <script type="" id="customerTableView">
 
 </script>
-<script type="" id="customerView">
-	<div class'' id=''>
-		<ul class='customerUl'></ul>
-		
+<script type="text/template" id="customersView">
+	<div class='' id=''>
+		<ul class='customer-list' id='customer-list'></ul>
 	</div>
 </script>
-<script type="" id="messageView">
-
+<script type="text/template" id="messagesView">
+<div class='' id=''>
+		<ul class='message-list' id='message-list'></ul>
+	</div>
 </script>
-<script type="" id="stockView">
-
+<script type="text/template" id="stockView">
+<div class='' id=''>
+		<ul class='stock-list' id='stock-list'></ul>
+	</div>
 </script>
 
 <style> 
@@ -63,16 +66,45 @@
 	</div>
 
 	<div class="container-fluid">
-	<div class='wrapper span12'></div>
+	<div class='wrapper span12'>
+		<div id="wrapper-customers" class='wrapper-customers span8'></div>
+		<div id="wrapper-messages"  class='wrapper-messages span8'></div>
+		<div id="wrapper-stock"  class='wrapper-stock span8'></div>
+	</div>
 		<div class=' footer'>OpenIt4Africa</div>
 	</div>
 	
 	
 	<script type="text/javascript"> 
-		window.customers = new CustomerCollection();
-		window.stock = new StockCollection();
-		window.messages = new MessageCollection();
-	
+		$(function(){  
+		window.customers = new CustomerCollection([ 
+							{ id: 1, name : "Pascal Maniraho", telephone : "514-571-5501"}, 
+							{ id: 2, name : "Scott Rostrup", telephone : "514-571-5502"}, 
+							{ id: 3, name : "Alok Mohindra", telephone : "514-571-5503"} 
+					]);
+		window.stock = new StockCollection([
+			{ id: 1, name : "tea" , price : 12 },
+			{ id: 2, name : "cofee" , price : 17 },
+			{ id: 3, name : "beans" , price : 15 },
+			{ id: 4, name : "banana" , price : 13 },
+			
+		]);
+		window.messages = new MessageCollection([
+			{}
+		]);
+		
+		
+		
+		
+		window.customersView = new CustomersView( { collection: window.customers});
+		window.messagesView = new MessagesView( { collection: window.messages});
+		window.stockView = new StockView( { collection: window.stock});
+		$("#wrapper-customers").html(window.customersView.render().el);
+		$("#wrapper-messages").html(window.messagesView.render().el);
+		$("#wrapper-stock").html(window.stockView.render().el);
+		
+		
+	});
 	</script>
 	
 	
